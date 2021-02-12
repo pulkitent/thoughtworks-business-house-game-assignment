@@ -1,0 +1,2 @@
+# business-house-game-lld-oop-ood
+Refer to this project for Object-Oriented-Design (OOD) or Object-Oriented-Programming (OOPs) interviews and also in Low-Level-Design (LLD) or machine coding round interviews. This project is a demonstration of the best &amp; clean code practices that I generally follow in my projects. It's a demonstration of certain design patterns, 4 rules of simple design, SOLID principles, and small logical commits with the DRY &amp; YAGNI principle.
