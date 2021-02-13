@@ -5,7 +5,7 @@ import java.util.List;
 public class Board {
     private final List<Cell> cells;
     private final List<Player> players;
-    private static Integer playerWithCurrentChance = 0;
+    private static Integer playerIdWithCurrentChance = 0;
 
     public Board(List<Cell> cells, List<Player> players) {
         this.cells = cells;
@@ -13,13 +13,13 @@ public class Board {
     }
 
     public void movePlayerWithChanceTo(Integer cellNumber) {
-        Player playerWithCurrentChance = players.get(Board.playerWithCurrentChance);
+        Player playerWithCurrentChance = players.get(Board.playerIdWithCurrentChance);
         Cell nextCell = cells.get(cellNumber - 1);
 
         nextCell.movePlayer(playerWithCurrentChance);
 
-        Board.playerWithCurrentChance = isCurrentPlayersIdGreaterThanTotalPlayers()
-                ? 0 : Board.playerWithCurrentChance + 1;
+        Board.playerIdWithCurrentChance = isCurrentPlayersIdGreaterThanTotalPlayers()
+                ? 0 : Board.playerIdWithCurrentChance + 1;
     }
 
     void displayScores() {
@@ -27,6 +27,6 @@ public class Board {
     }
 
     private boolean isCurrentPlayersIdGreaterThanTotalPlayers() {
-        return playerWithCurrentChance >= players.size() - 1;
+        return playerIdWithCurrentChance >= players.size() - 1;
     }
 }
