@@ -17,4 +17,8 @@ public class Player {
     void updateAmount(Integer money) {
         this.amountMoney = this.amountMoney.add(money);
     }
+
+    boolean hasCapacityToBuy(Integer money) {
+        return this.amountMoney.isGreaterThanGivenValue(money);
+    }
 }

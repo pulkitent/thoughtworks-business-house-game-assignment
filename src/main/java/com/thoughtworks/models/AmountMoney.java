@@ -12,6 +12,10 @@ public class AmountMoney {
         return "" + value;
     }
 
+    boolean isGreaterThanGivenValue(Integer givenValue) {
+        return (this.value - givenValue) > 0;
+    }
+
     AmountMoney add(Integer value) {
         return new AmountMoney(this.value + value);
     }

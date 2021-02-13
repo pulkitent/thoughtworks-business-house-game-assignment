@@ -11,4 +11,10 @@ public class Treasure extends Cell {
         Player playerLandedInJailCell = this.getLandedPlayer();
         playerLandedInJailCell.updateAmount(200);
     }
+
+    @Override
+    void movePlayer(Player player) {
+        super.setLandedPlayer(player);
+        updatePlayerAmount();
+    }
 }

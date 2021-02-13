@@ -12,9 +12,9 @@ public class Board {
         this.players = players;
     }
 
-    public void movePlayerWithChanceTo(Integer diceOutput) {
+    public void movePlayerWithChanceTo(Integer cellNumber) {
         Player playerWithCurrentChance = players.get(Board.playerWithCurrentChance);
-        Cell nextCell = cells.get(diceOutput);
+        Cell nextCell = cells.get(cellNumber - 1);
 
         nextCell.movePlayer(playerWithCurrentChance);
 

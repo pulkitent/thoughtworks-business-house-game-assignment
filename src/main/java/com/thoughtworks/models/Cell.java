@@ -16,10 +16,14 @@ public class Cell {
 
     void movePlayer(Player player) {
         this.landedPlayer = player;
-        this.updatePlayerAmount();
+        updatePlayerAmount();
     }
 
     public Player getLandedPlayer() {
         return landedPlayer;
+    }
+
+    public void setLandedPlayer(Player landedPlayer) {
+        this.landedPlayer = landedPlayer;
     }
 }

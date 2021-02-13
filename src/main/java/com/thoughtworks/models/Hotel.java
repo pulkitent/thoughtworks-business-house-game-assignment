@@ -22,8 +22,16 @@ public class Hotel extends Cell {
             return;
         }
 
-        playerLandedInHotelCell.updateAmount(200);
-        purchasedBy(playerLandedInHotelCell);
+        if (playerLandedInHotelCell.hasCapacityToBuy(200)) {
+            playerLandedInHotelCell.updateAmount(-200);
+            purchasedBy(playerLandedInHotelCell);
+        }
+    }
+
+    @Override
+    void movePlayer(Player player) {
+        super.setLandedPlayer(player);
+        updatePlayerAmount();
     }
 
     private boolean isPreOwned() {

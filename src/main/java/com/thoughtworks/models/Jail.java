@@ -11,4 +11,10 @@ public class Jail extends Cell {
         Player playerLandedInJailCell = this.getLandedPlayer();
         playerLandedInJailCell.updateAmount(-150);
     }
+
+    @Override
+    void movePlayer(Player player) {
+        super.setLandedPlayer(player);
+        updatePlayerAmount();
+    }
 }
