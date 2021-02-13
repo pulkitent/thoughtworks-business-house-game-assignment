@@ -8,6 +8,7 @@ import java.util.List;
 import static com.thoughtworks.models.CellType.*;
 import static java.util.Arrays.asList;
 
+//TODO: Need to fix business logic, Output is not coming as expected
 public class ApplicationStartup {
     public static void main(String[] args) {
         List<Player> players = getThreePlayersWithInitialAmountAsThousand();
