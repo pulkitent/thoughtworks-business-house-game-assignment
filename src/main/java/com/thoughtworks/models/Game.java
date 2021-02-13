@@ -14,8 +14,8 @@ public class Game {
     public void play() {
         List<Integer> diceOutputs = dice.getDiceOutputs();
 
-        for (Integer diceOutput : diceOutputs) {
-            this.board.movePlayerWithChanceTo(diceOutput);
+        for (Integer cellNumber : diceOutputs) {
+            this.board.movePlayerWithChanceTo(cellNumber);
         }
     }
 

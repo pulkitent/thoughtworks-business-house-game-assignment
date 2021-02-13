@@ -31,6 +31,7 @@ public class ApplicationStartup {
         players.add(firstPlayer);
         players.add(secondPlayer);
         players.add(thirdPlayer);
+
         return players;
     }
 

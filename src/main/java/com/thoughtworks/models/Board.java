@@ -13,11 +13,13 @@ public class Board {
     }
 
     public void movePlayerWithChanceTo(Integer diceOutput) {
-        Player player = players.get(playerWithCurrentChance);
+        Player playerWithCurrentChance = players.get(Board.playerWithCurrentChance);
         Cell nextCell = cells.get(diceOutput);
 
-        nextCell.movePlayer(player);
-        playerWithCurrentChance = isCurrentPlayersIdGreaterThanTotalPlayers() ? 0 : playerWithCurrentChance + 1;
+        nextCell.movePlayer(playerWithCurrentChance);
+
+        Board.playerWithCurrentChance = isCurrentPlayersIdGreaterThanTotalPlayers()
+                ? 0 : Board.playerWithCurrentChance + 1;
     }
 
     void displayScores() {
