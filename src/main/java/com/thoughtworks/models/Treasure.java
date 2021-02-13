@@ -1,5 +1,7 @@
 package com.thoughtworks.models;
 
+import static com.thoughtworks.models.Constants.NEGATIVE_TWO_HUNDRED;
+
 public class Treasure extends Cell {
 
     public Treasure(CellType cellType, Integer position) {
@@ -9,12 +11,12 @@ public class Treasure extends Cell {
     @Override
     void updatePlayerAmount() {
         Player playerLandedInJailCell = this.getLandedPlayer();
-        playerLandedInJailCell.updateAmount(200);
+        playerLandedInJailCell.updateAmount(NEGATIVE_TWO_HUNDRED);
     }
 
     @Override
     void movePlayer(Player player) {
-        super.setLandedPlayer(player);
+        this.setLandedPlayer(player);
         updatePlayerAmount();
     }
 }

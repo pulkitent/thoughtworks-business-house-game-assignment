@@ -2,6 +2,8 @@ package com.thoughtworks.models;
 
 import java.util.Objects;
 
+import static com.thoughtworks.models.Constants.*;
+
 public class Hotel extends Cell {
     private Player owner;
 
@@ -18,19 +20,19 @@ public class Hotel extends Cell {
         Player playerLandedInHotelCell = this.getLandedPlayer();
 
         if (isPreOwned()) {
-            playerLandedInHotelCell.updateAmount(-50);
+            playerLandedInHotelCell.updateAmount(NEGATIVE_FIFTY);
             return;
         }
 
-        if (playerLandedInHotelCell.hasCapacityToBuy(200)) {
-            playerLandedInHotelCell.updateAmount(-200);
+        if (playerLandedInHotelCell.hasCapacityToBuy(TWO_HUNDRED)) {
+            playerLandedInHotelCell.updateAmount(NEGATIVE_TWO_HUNDRED);
             purchasedBy(playerLandedInHotelCell);
         }
     }
 
     @Override
     void movePlayer(Player player) {
-        super.setLandedPlayer(player);
+        this.setLandedPlayer(player);
         updatePlayerAmount();
     }
 
